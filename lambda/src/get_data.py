@@ -210,10 +210,7 @@ def get_timeline(master_data, year_month: YearMonth):
     master_data["timeline"] = timeline
     return master_data
 
-# ¥100正規表現対応追加、一つ無料みたいな無料クーポンの正規表現はまだ。
-# また、¥100オフクーポンの方がちゃんと使う人数がでますが、
-# オムライスのトッピング一つ無料の方がjsonのresultは[].
-# または、get_coupon関数は全部のクーポンを得るから、全てのクーポンの商品に対して同じpriceで計算するのが不合理だと思います。
+
 def get_coupon(master_data, year_month: YearMonth, price):
     res = session.get(
         'https://manager.line.biz/api/bots/{0}/coupons/list'
